@@ -43,7 +43,7 @@ void saisirnotes(){
   printf(" combien des notes a saisir :");
   scanf("%d",&n);
   for ( int i=0 ; i<n; i++){
-    printf("saisir votre note");
+    printf("saisir votre note :");
     scanf("%d",&note[i]);
   }
 }
@@ -56,7 +56,7 @@ void affichernotes(){
 }
 void statistique(){
   int choix ;
-  printf("choisir : \n pour afficher la moyenne des  notes appuyer 1:\n pour afficher le max et min des notes appuyer 2: \n pour afficher les nombre des admis / non admis appuyer 3: \n");
+  printf("choisir : \n pour afficher la moyenne des  notes appuyer 1:\n pour afficher le max  des notes appuyer 2:\n pour afficher le min des notes appuyez sur : 3\n  pour afficher les nombre des admis / non admis appuyer 4: \n");
   scanf("%d",&choix);
   switch(choix){
             case 1: moyenne(); break;
@@ -71,10 +71,10 @@ void statistique(){
 void moyenne(){
   int somme =0;
   for(int i = 0 ; i<n;i++){
-    int somme=+note[i];
-    int moy = somme/n;
-    printf("la moyenne des notes est :%d",moy);
+     somme+=note[i];
   }
+  float moy = somme/n;
+  printf("la moyenne des notes est :%.2f \n",moy);
 
 }
 void maxnote(){
@@ -83,8 +83,9 @@ void maxnote(){
     if(max<note[i]){
       max=note[i];
     }
-   printf("la note max est :%d",max);
+   
   }
+  printf("la note max est :%d",max);
 }
 void minnote(){
   int min=note[0];
@@ -92,7 +93,7 @@ void minnote(){
     if(min>note[i]){
       min=note[i];
     }
-   printf("la note max est :%d",min);
+   printf("la note max est :%d \n",min);
   }
 }
 void admis(){
@@ -103,7 +104,7 @@ void admis(){
     }
 
   }
-  printf("les nombres des admis est:%d",count);
+  printf("les nombres des admis est:%d \n",count);
 }
 void ajouternote(){
         
